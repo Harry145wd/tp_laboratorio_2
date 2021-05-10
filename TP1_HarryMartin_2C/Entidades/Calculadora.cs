@@ -19,39 +19,37 @@ namespace Entidades
         {
             char charOperador;
             double resultado = 0;
-            if (!string.IsNullOrEmpty(operador))
+            char.TryParse(operador, out charOperador);
+            operador = ValidarOperador(charOperador);
+            switch (operador)
             {
-                char.TryParse(operador, out charOperador);
-                operador = ValidarOperador(charOperador);
-                switch (operador)
-                {
-                    case "+":
-                        {
-                            resultado = num1 + num2;
-                            break;
-                        }
-                    case "-":
-                        {
-                            resultado = num1 - num2;
-                            break;
-                        }
-                    case "*":
-                        {
-                            resultado = num1 * num2;
-                            break;
-                        }
-                    case "/":
-                        {
-                            resultado = num1 / num2;
-                            break;
-                        }
-                    default:
-                        {
-                            resultado = num1 + num2;
-                            break;
-                        }
-                }
+                case "+":
+                    {
+                        resultado = num1 + num2;
+                        break;
+                    }
+                case "-":
+                    {
+                        resultado = num1 - num2;
+                        break;
+                    }
+                case "*":
+                    {
+                        resultado = num1 * num2;
+                        break;
+                    }
+                case "/":
+                    {
+                        resultado = num1 / num2;
+                        break;
+                    }
+                default:
+                    {
+                        resultado = num1 + num2;
+                        break;
+                    }
             }
+
             return resultado;
         }
         

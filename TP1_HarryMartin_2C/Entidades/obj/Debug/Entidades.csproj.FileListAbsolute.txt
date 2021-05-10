@@ -4,3 +4,9 @@ C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\t
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades1\bin\Debug\Entidades1.pdb
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades1\obj\Debug\Entidades1.dll
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades1\obj\Debug\Entidades1.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\bin\Debug\Entidades1.dll
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\bin\Debug\Entidades1.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\obj\Debug\Entidades1.dll
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP1_HarryMartin_2C\Entidades\obj\Debug\Entidades1.pdb
