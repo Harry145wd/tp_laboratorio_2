@@ -1,0 +1,10 @@
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\bin\Debug\PruebaLuteria.exe.config
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\bin\Debug\PruebaLuteria.exe
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\bin\Debug\PruebaLuteria.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\bin\Debug\Entidades.dll
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\bin\Debug\Entidades.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\obj\Debug\PruebaLuteria.csproj.AssemblyReference.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\obj\Debug\PruebaLuteria.csproj.CoreCompileInputs.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\obj\Debug\PruebaLuteria.csproj.CopyComplete
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\obj\Debug\PruebaLuteria.exe
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\PruebaLuteria\obj\Debug\PruebaLuteria.pdb

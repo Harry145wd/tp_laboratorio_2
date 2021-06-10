@@ -1,0 +1,16 @@
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\bin\Debug\TP3_HarryMartin_2C.exe.config
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\bin\Debug\TP3_HarryMartin_2C.exe
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\bin\Debug\TP3_HarryMartin_2C.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\bin\Debug\Entidades.dll
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\bin\Debug\Entidades.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.csproj.AssemblyReference.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.FormPrincipal.resources
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.Properties.Resources.resources
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.csproj.GenerateResource.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.csproj.CoreCompileInputs.cache
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.csproj.CopyComplete
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.exe
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.frmAlmacen.resources
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.frmRestock.resources
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\TP3_HarryMartin_2C\obj\Debug\TP3_HarryMartin_2C.FrmCrearInstrumento.resources
