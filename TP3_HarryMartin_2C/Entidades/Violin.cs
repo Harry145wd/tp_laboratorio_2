@@ -88,6 +88,21 @@ namespace Entidades
         {
             this.EstaAfinado = true;
         }
+
+        public string LblSetup(eTipoInstrumento enumEntrada)
+        {
+            string ret= "Parametro";
+            if(enumEntrada == Violin.TipoInstrumento)
+            {
+                ret = "Modelo Violin";
+            }
+            return ret;
+        }
+
+        public Enum EnumSetup(eTipoInstrumento enumEntrada)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Operators
