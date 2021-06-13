@@ -5,7 +5,6 @@ C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\t
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\bin\Debug\Entidades.pdb
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\Luteria Forms.csproj.AssemblyReference.cache
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.FrmAlmacen.resources
-C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.FormPrincipal.resources
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.FrmCrearInstrumento.resources
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.FrmRestock.resources
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.Properties.Resources.resources
@@ -14,3 +13,4 @@ C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\t
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\Luteria Forms.csproj.CopyComplete
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.exe
 C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.pdb
+C:\Users\harry\Desktop\UTN\UTN Cursada\3er Cuatrimestre\Programacion_Labo2\TPs\tp_laboratorio_2\TP3_HarryMartin_2C\Luteria Forms\obj\Debug\TP3_HarryMartin_2C.FrmPrincipal.resources

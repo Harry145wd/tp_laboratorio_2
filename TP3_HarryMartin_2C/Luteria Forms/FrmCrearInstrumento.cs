@@ -13,6 +13,7 @@ namespace TP3_HarryMartin_2C
 {
     public partial class FrmCrearInstrumento : Form ,IValueRefresh
     {
+        FrmPrincipal frmPrincipal; 
         Lutheria lutheria;
         private FrmCrearInstrumento()
         {
@@ -21,11 +22,12 @@ namespace TP3_HarryMartin_2C
             this.cmbTipoInstrumento.DropDownStyle = ComboBoxStyle.DropDownList;
             this.dtpFechaCreacion.Format = DateTimePickerFormat.Custom;
             this.dtpFechaCreacion.CustomFormat = "dd/MM/yyyy";
-            this.cmbParametro.DropDownStyle = ComboBoxStyle.DropDownList;
+            
         }
-        public  FrmCrearInstrumento(Lutheria lutheria):this()
+        public  FrmCrearInstrumento(Lutheria lutheria,FrmPrincipal frmPrincipal ):this()
         {
             this.lutheria = lutheria;
+            this.frmPrincipal = frmPrincipal;
         }
 
         public void ValueRefresh()
@@ -34,6 +36,33 @@ namespace TP3_HarryMartin_2C
         }
 
         private void FrmCrearInstrumento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnContinuar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.lutheria.InstrumentosEnProceso.Add(this.lutheria.CrearInstrumento((eTipoInstrumento)this.cmbTipoInstrumento.SelectedItem, this.txtboxLuthier.Text, this.dtpFechaCreacion.Value));
+            }
+            catch (NotEnoughMaterialsException exc)
+            {
+                MessageBox.Show(exc.Message, "Faltan materiales", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            this.frmPrincipal.ValueRefresh();
+        }
+
+        private void cmbTipoInstrumento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

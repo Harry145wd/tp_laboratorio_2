@@ -69,15 +69,14 @@ namespace TP3_HarryMartin_2C
             // nudCantidad
             // 
             this.nudCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCantidad.Location = new System.Drawing.Point(186, 29);
+            this.nudCantidad.Location = new System.Drawing.Point(186, 30);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 31);
             this.nudCantidad.TabIndex = 3;
-            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // btnGenerarPedido
             // 
-            this.btnGenerarPedido.Location = new System.Drawing.Point(334, 12);
+            this.btnGenerarPedido.Location = new System.Drawing.Point(316, 13);
             this.btnGenerarPedido.Name = "btnGenerarPedido";
             this.btnGenerarPedido.Size = new System.Drawing.Size(135, 48);
             this.btnGenerarPedido.TabIndex = 4;
@@ -85,11 +84,11 @@ namespace TP3_HarryMartin_2C
             this.btnGenerarPedido.UseVisualStyleBackColor = true;
             this.btnGenerarPedido.Click += new System.EventHandler(this.btnGenerarPedido_Click);
             // 
-            // frmRestock
+            // FrmRestock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 74);
+            this.ClientSize = new System.Drawing.Size(466, 72);
             this.Controls.Add(this.btnGenerarPedido);
             this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.label2);
@@ -97,7 +96,7 @@ namespace TP3_HarryMartin_2C
             this.Controls.Add(this.cmbMaterialARestockear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmRestock";
+            this.Name = "FrmRestock";
             this.Text = "Re-Stock";
             this.Load += new System.EventHandler(this.frmRestock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();

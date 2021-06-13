@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    interface ICuerdas
+    public interface ICuerdas
     {       
         bool EstaEncordado { get; set; }
 

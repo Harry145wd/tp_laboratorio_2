@@ -31,13 +31,12 @@ namespace TP3_HarryMartin_2C
         {
             this.lblTipoInstrumento = new System.Windows.Forms.Label();
             this.cmbTipoInstrumento = new System.Windows.Forms.ComboBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lblLuthier = new System.Windows.Forms.Label();
             this.txtboxLuthier = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaCreacion = new System.Windows.Forms.DateTimePicker();
-            this.lblParametro = new System.Windows.Forms.Label();
-            this.cmbParametro = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnContinuar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTipoInstrumento
@@ -58,6 +57,7 @@ namespace TP3_HarryMartin_2C
             this.cmbTipoInstrumento.Name = "cmbTipoInstrumento";
             this.cmbTipoInstrumento.Size = new System.Drawing.Size(222, 33);
             this.cmbTipoInstrumento.TabIndex = 1;
+            this.cmbTipoInstrumento.SelectedIndexChanged += new System.EventHandler(this.cmbTipoInstrumento_SelectedIndexChanged);
             // 
             // lblLuthier
             // 
@@ -97,32 +97,33 @@ namespace TP3_HarryMartin_2C
             this.dtpFechaCreacion.TabIndex = 6;
             this.dtpFechaCreacion.Value = new System.DateTime(2021, 6, 10, 18, 30, 0, 0);
             // 
-            // lblParametro
+            // btnCancelar
             // 
-            this.lblParametro.AutoSize = true;
-            this.lblParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParametro.Location = new System.Drawing.Point(12, 197);
-            this.lblParametro.Name = "lblParametro";
-            this.lblParametro.Size = new System.Drawing.Size(111, 25);
-            this.lblParametro.TabIndex = 7;
-            this.lblParametro.Text = "Parametro";
+            this.btnCancelar.Location = new System.Drawing.Point(12, 210);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(103, 38);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // cmbParametro
+            // btnContinuar
             // 
-            this.cmbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbParametro.FormattingEnabled = true;
-            this.cmbParametro.Location = new System.Drawing.Point(12, 225);
-            this.cmbParametro.Name = "cmbParametro";
-            this.cmbParametro.Size = new System.Drawing.Size(222, 33);
-            this.cmbParametro.TabIndex = 8;
+            this.btnContinuar.Location = new System.Drawing.Point(131, 210);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(103, 38);
+            this.btnContinuar.TabIndex = 8;
+            this.btnContinuar.Text = "Crear";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // FrmCrearInstrumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 279);
-            this.Controls.Add(this.cmbParametro);
-            this.Controls.Add(this.lblParametro);
+            this.ClientSize = new System.Drawing.Size(246, 260);
+            this.Controls.Add(this.btnContinuar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dtpFechaCreacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtboxLuthier);
@@ -130,7 +131,8 @@ namespace TP3_HarryMartin_2C
             this.Controls.Add(this.cmbTipoInstrumento);
             this.Controls.Add(this.lblTipoInstrumento);
             this.Name = "FrmCrearInstrumento";
-            this.Text = "Crear un Instrumento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Crear Instrumento";
             this.Load += new System.EventHandler(this.FrmCrearInstrumento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,12 +143,11 @@ namespace TP3_HarryMartin_2C
 
         private System.Windows.Forms.Label lblTipoInstrumento;
         private System.Windows.Forms.ComboBox cmbTipoInstrumento;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label lblLuthier;
         private System.Windows.Forms.TextBox txtboxLuthier;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFechaCreacion;
-        private System.Windows.Forms.Label lblParametro;
-        private System.Windows.Forms.ComboBox cmbParametro;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnContinuar;
     }
 }

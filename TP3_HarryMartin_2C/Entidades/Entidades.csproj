@@ -41,24 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Almacen.cs" />
-    <Compile Include="Costo.cs" />
-    <Compile Include="Enumerators\eMaterial.cs" />
-    <Compile Include="Enumerators\eTipoInstrumento.cs" />
-    <Compile Include="Flauta.cs" />
-    <Compile Include="Guitarra.cs" />
+    <Compile Include="Archivos.cs" />
+    <Compile Include="Fabrica\Afinadora.cs" />
+    <Compile Include="Almacen\Almacen.cs" />
+    <Compile Include="Fabrica\Barnizadora.cs" />
+    <Compile Include="Almacen\Costo.cs" />
+    <Compile Include="Fabrica\Encordadora.cs" />
+    <Compile Include="Enumerados\eMaterial.cs" />
+    <Compile Include="Enumerados\eTipoInstrumento.cs" />
+    <Compile Include="Instrumentos\Flauta.cs" />
+    <Compile Include="Instrumentos\Guitarra.cs" />
     <Compile Include="Interfaces\IAfinable.cs" />
+    <Compile Include="Interfaces\IBarnizable.cs" />
     <Compile Include="Interfaces\ICuerdas.cs" />
-    <Compile Include="Instrumento.cs" />
-    <Compile Include="Interfaces\ISetup.cs" />
+    <Compile Include="Instrumentos\Instrumento.cs" />
+    <Compile Include="Interfaces\ILimpiable.cs" />
     <Compile Include="Interfaces\IValueRefresh.cs" />
-    <Compile Include="Lutheria.cs" />
+    <Compile Include="Interfaces\ITerminado.cs" />
+    <Compile Include="Fabrica\Limpiadora.cs" />
+    <Compile Include="Fabrica\Lutheria.cs" />
+    <Compile Include="InvalidStockValueException.cs" />
+    <Compile Include="NotEnoughMaterialsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock.cs" />
-    <Compile Include="Violin.cs" />
+    <Compile Include="Almacen\Stock.cs" />
+    <Compile Include="Instrumentos\Violin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DiagramaClasesLuteria.cd" />
+    <Folder Include="Excepciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

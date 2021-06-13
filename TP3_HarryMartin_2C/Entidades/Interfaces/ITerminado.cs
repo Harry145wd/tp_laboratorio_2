@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Guitarra : Instrumento
+    public interface ITerminado
     {
-        
+        bool Terminado { get; }
     }
 }

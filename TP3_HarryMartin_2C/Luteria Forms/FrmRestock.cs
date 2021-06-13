@@ -30,20 +30,23 @@ namespace TP3_HarryMartin_2C
         {
 
         }
-
         private void btnGenerarPedido_Click(object sender, EventArgs e)
         {
-            this.lutheria.Almacen[(eMaterial)this.cmbMaterialARestockear.SelectedItem].ReStock((int)this.nudCantidad.Value);
-            MessageBox.Show("Pedido en Camino","Pedido Generado",MessageBoxButtons.OK);
-            MessageBox.Show($"Su pedido de {this.cmbMaterialARestockear.SelectedItem.ToString()} ha llegado","Arrivo de pedido", MessageBoxButtons.OK);
+            try 
+            {
+                this.lutheria.Almacen[(eMaterial)this.cmbMaterialARestockear.SelectedItem].ReStock((int)this.nudCantidad.Value);
+                MessageBox.Show("Pedido en Camino", "Pedido Generado", MessageBoxButtons.OK);
+                MessageBox.Show($"Su pedido de {this.cmbMaterialARestockear.SelectedItem.ToString()} ha llegado", "Arrivo de pedido", MessageBoxButtons.OK);
+            }
+            catch(InvalidStockValueException exc)
+            {
+                MessageBox.Show(exc.Message,"Pedido Denegado",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
+                
             frmAlmacen.ValueRefresh();
         }
-
-        private void nudCantidad_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         public void ValueRefresh()
         {
             throw new NotImplementedException();

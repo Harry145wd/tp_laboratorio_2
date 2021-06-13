@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Flauta : Instrumento
+    [Serializable]
+    public enum eMaterial
     {
-
+        Madera,
+        Metal,
+        Plastico
     }
 }

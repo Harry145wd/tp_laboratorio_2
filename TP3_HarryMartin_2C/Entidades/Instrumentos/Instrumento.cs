@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Instrumento
+    [Serializable]
+    public abstract class Instrumento 
     {
         #region Atributes
-        protected static eTipoInstrumento tipoInstrumento;
+        protected eTipoInstrumento tipoInstrumento;
         protected string luthier;
         protected DateTime fechaFabricacion;
         protected Guid id;
@@ -38,20 +39,24 @@ namespace Entidades
         public string Luthier
         {
             get { return luthier; }
-            set { luthier = value; }
+            set 
+            { 
+                if(!string.IsNullOrEmpty(value))
+                {
+                    luthier = value;
+                }
+            }
         }
-        public static eTipoInstrumento TipoInstrumento
+        public eTipoInstrumento TipoInstrumento
         {
-            get { return tipoInstrumento; }
-            set { tipoInstrumento = value; }
+            get { return this.tipoInstrumento; }
+            set { this.tipoInstrumento = value; }
         }
-
-
 
         #endregion
 
         #region Constructors
-        public Instrumento()
+        protected Instrumento()
         {
             this.ID = Guid.NewGuid();
             this.FechaFabricacion = DateTime.Now;
@@ -65,19 +70,7 @@ namespace Entidades
         #endregion
 
         #region Methods
-        protected virtual string Datos()
-        {
-            StringBuilder sb = new StringBuilder($"Instrumento: {TipoInstrumento}.\n");
-            sb.AppendLine($"ID: {this.ID}");
-            sb.AppendLine($"Luthier: {this.Luthier}.");
-            sb.AppendLine($"Fecha de Fabricacion: {this.FechaFabricacion.ToString("dd/MM/yyyy")}");
-            return sb.ToString();
-        }
-        public override string ToString()
-        {
-            return this.Datos();
-        }
-        public static int CompararPorNombre(Instrumento i1 , Instrumento i2)
+        public static int CompararPorNombre(Instrumento i1, Instrumento i2)
         {
             return string.Compare(i1.GetType().Name, i2.GetType().Name);
         }
@@ -85,10 +78,33 @@ namespace Entidades
         {
             listaInstrumentos.Sort(Instrumento.CompararPorNombre);
         }
+
+        protected virtual string Datos()
+        {
+            StringBuilder sb = new StringBuilder($"{this.TipoInstrumento}.\n");
+            sb.AppendLine($"ID: {this.ID}");
+            sb.AppendLine($"Luthier: {this.Luthier}.");
+            sb.AppendLine($"Fecha de Fabricacion: {this.FechaFabricacion.ToString("dd/MM/yyyy HH:mm")}");
+            return sb.ToString();
+        }
+        public override string ToString()
+        {
+            return this.Datos();
+        }
+       
+        public static string BooleanToSiNo(bool state)
+        {
+            string ret = "No";
+            if(state)
+            {
+                ret = "Si";
+            }
+            return ret;
+        }
         #endregion
 
         #region Operators
-
+        
         #endregion
     }
 }

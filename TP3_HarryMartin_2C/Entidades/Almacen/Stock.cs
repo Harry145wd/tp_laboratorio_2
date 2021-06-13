@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class Stock
     {
         #region Atributes
@@ -43,10 +44,14 @@ namespace Entidades
         public bool ReStock(int cantidad)
         {
             bool ret = false;
-            if (cantidad > -1)
+            if (cantidad >0)
             {
                 this.Cantidad += cantidad;
                 ret = true;
+            }
+            else
+            {
+                throw new InvalidStockValueException("El valor de Re-Stock es 0 o menor");
             }
             return ret;
         }
@@ -57,6 +62,10 @@ namespace Entidades
             {
                 this.Cantidad -= cantidad;
                 ret = true;
+            }
+            else
+            {
+                throw new InvalidStockValueException("No hay suficiente stock");
             }
             return ret;
         }

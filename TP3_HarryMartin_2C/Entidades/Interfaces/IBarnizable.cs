@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public  interface ISetup<T> where T: Enum
+    public interface IBarnizable
     {
-        string LblSetup(T enumEntrada);
-        Enum EnumSetup(T enumEntrada);
+        bool EstaBarnizado { get; set; }
+
+        void Barnizar();
     }
 }

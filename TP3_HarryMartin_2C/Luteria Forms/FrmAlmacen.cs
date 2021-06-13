@@ -14,13 +14,15 @@ namespace TP3_HarryMartin_2C
     public partial class FrmAlmacen : Form, IValueRefresh
     {
         Lutheria lutheria;
-        public FrmAlmacen()
+        private FrmAlmacen()
         {
             InitializeComponent();
         }
         public FrmAlmacen(Lutheria lutheria):this()
         {
             this.lutheria = lutheria;
+            this.rtbInstrumentosEnStock.ReadOnly = true;
+            this.rtbMateriasPrimas.ReadOnly = true;
         }
 
         public void ValueRefresh()

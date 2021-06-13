@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class Almacen
     {
         #region Atributes
@@ -17,7 +18,6 @@ namespace Entidades
 
         #region Properties
         //utilizo indexadores para obtener un stock segun el material
-
         public Stock this[eMaterial material]
         {
             get 
@@ -28,6 +28,23 @@ namespace Entidades
                     if(aux == material)
                     {
                         ret = aux;
+                        break;
+                    }
+                }
+                return ret;
+            }
+        }
+        //utilizo indexadores para obtener un costo segun el instrumento y el material
+        public Costo this[eTipoInstrumento tipo,eMaterial material]
+        {
+            get
+            {
+                Costo ret = null;
+                foreach (Costo costo in this.Costos)
+                {
+                    if(costo.TipoInstrumento == tipo && costo.Material == material)
+                    {
+                        ret = costo;
                         break;
                     }
                 }
@@ -112,6 +129,7 @@ namespace Entidades
         public string MostrarInstrumentosEnStock()
         {
             StringBuilder sb = new StringBuilder("Lista de Instrumentos en stock:\n");
+            sb.AppendLine("-----------------------------------------");
             Instrumento.OrdenarInstrumentosPorTipo(this.stockInstrumentos);
             foreach (Instrumento instrumento in this.StockInstrumentos)
             {
@@ -144,7 +162,7 @@ namespace Entidades
                     }
                     else
                     {
-                        throw new Exception($"No hay suficiente {material.ToString()} en stock para crear un {tipo.ToString()}");
+                        throw new NotEnoughMaterialsException($"No hay suficiente {material.ToString()} en stock para crear un {tipo.ToString()}");
                     }
                     break;
                 }

@@ -1,0 +1,29 @@
+Lista de materia prima:
+Cantidad de Madera: 0
+Cantidad de Metal: 8
+Cantidad de Plastico: 16
+-----------------------------------------
+
+Lista de Instrumentos en stock:
+-----------------------------------------
+Guitarra.
+ID: 8efee193-3eff-4631-820b-741c37957ced
+Luthier: Lucas.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Barnizado: Si
+Esta Encordado: Si
+Esta Afinado: Si
+
+
+-----------------------------------------
+Violin.
+ID: 941b8151-e434-4686-a4fa-c8c30b8bf836
+Luthier: Desconocido.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Barnizado: Si
+Esta Encordado: Si
+Esta Afinado: Si
+
+-----------------------------------------
+
+

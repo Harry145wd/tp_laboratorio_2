@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public enum eMaterial
+    public interface ILimpiable
     {
-        Madera,
-        Plastico,
-        Metal
+        bool EstaLimpio { get; set; }
+
+        void Limpiar();
     }
 }

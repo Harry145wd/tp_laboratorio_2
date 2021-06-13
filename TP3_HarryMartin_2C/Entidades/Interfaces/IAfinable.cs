@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    interface IAfinable
+    public interface IAfinable
     {
         bool EstaAfinado { get; set; }
         void Afinar();
