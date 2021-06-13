@@ -65,23 +65,23 @@ namespace TP3_HarryMartin_2C
             this.lBoxEncordadora.Items.Clear();
             this.lBoxAfinadora.Items.Clear();
             this.lBoxLimpiadora.Items.Clear();
-            foreach (Instrumento instrumento in this.lutheria.InstrumentosEnProceso)
+            foreach (Instrumento instrumento in this.lutheria.ListaDeInstrumentos)
             {
                 this.lBoxRecienCreados.Items.Add(instrumento);
             }
-            foreach (Instrumento instrumento in this.lutheria.Barnizadora.Instrumentos)
+            foreach (Instrumento instrumento in this.lutheria.Barnizadora.ListaDeInstrumentos)
             {
                 this.lBoxBarnizadora.Items.Add(instrumento);
             }
-            foreach (Instrumento instrumento in this.lutheria.Encordadora.Instrumentos)
+            foreach (Instrumento instrumento in this.lutheria.Encordadora.ListaDeInstrumentos)
             {
                 this.lBoxEncordadora.Items.Add(instrumento);
             }
-            foreach (Instrumento instrumento in this.lutheria.Afinadora.Instrumentos)
+            foreach (Instrumento instrumento in this.lutheria.Afinadora.ListaDeInstrumentos)
             {
                 this.lBoxAfinadora.Items.Add(instrumento);
             }
-            foreach (Instrumento instrumento in this.lutheria.Limpiadora.Instrumentos)
+            foreach (Instrumento instrumento in this.lutheria.Limpiadora.ListaDeInstrumentos)
             {
                 this.lBoxLimpiadora.Items.Add(instrumento);
             }
@@ -105,118 +105,6 @@ namespace TP3_HarryMartin_2C
             this.SelectedItemRefresh(null);
         }
 
-        #region PasarA_Validators
-        private bool PasarABarnizadora(Instrumento instrumento)
-        {
-            bool ret = false;
-            if (instrumento is IBarnizable)
-            {
-                ret = true;
-            }
-            else
-            {
-                throw new Exception("Este instrumento no puede ser barnizado con la Barnizadora");
-            }
-            return ret;
-        }
-        private bool PasarALimpiadora(Instrumento instrumento)
-        {
-            bool ret = false;
-            if (instrumento is ILimpiable)
-            {
-                ret = true;
-            }
-            else
-            {
-                throw new Exception("Este instrumento no se puede ser limpiado con la Limpiadora");
-            }
-            return ret;
-        }
-        private bool PasarAEncordadora(Instrumento instrumento)
-        {
-            bool ret = false;
-            if (instrumento is ICuerdas)
-            {
-                if (instrumento is IBarnizable)
-                {
-                    IBarnizable iCuerdas = (IBarnizable)instrumento;
-                    if (iCuerdas.EstaBarnizado)
-                    {
-                        ret = true;
-                    }
-                    else
-                    {
-                        throw new Exception("El instrumento no se puede encordar todavia ya que necesita barniz");
-                    }
-                }
-                else
-                {
-                    ret = true;
-                }
-            }
-            else
-            {
-                throw new Exception("Este instrumento no se puede encordar ya que no es un instrumento de cuerda");
-            }
-            return ret;
-        }
-        private bool PasarAAfinadora(Instrumento instrumento)
-        {
-            bool ret = false;
-            if (instrumento is IAfinable)
-            {
-                if (instrumento is ICuerdas)
-                {
-                    ICuerdas iCuerdas = (ICuerdas)instrumento;
-                    if (iCuerdas.EstaEncordado)
-                    {
-                        ret = true;
-                    }
-                    else
-                    {
-                        throw new Exception("El instrumento no se puede afinar ya que no tiene cuerdas");
-                    }
-                }
-                if (instrumento is ILimpiable)
-                {
-                    ILimpiable ilimpiable = (ILimpiable)instrumento;
-                    if (ilimpiable.EstaLimpio)
-                    {
-                        ret = true;
-                    }
-                    else
-                    {
-                        throw new Exception("El instrumento no se puede afinar ya que no fue limpiado");
-                    }
-                }
-                
-                ret = true;
-            }
-            else
-            {
-                throw new Exception("Este instrumento no se puede afinar con la Afinadora");
-            }
-            return ret;
-        }
-        private bool PasarAStock(Instrumento instrumento)
-        {
-            bool ret = false;
-            if (instrumento is ITerminado)
-            {
-                ITerminado iterminado = (ITerminado)instrumento;
-                if (iterminado.Terminado)
-                {
-                    ret = true;
-                }
-                else
-                {
-                    throw new Exception("Este instrumento no puede pasarse al Almacen ya que no esta terminado");
-                }
-            }
-
-            return ret;
-        }
-        #endregion
 
         #region ListBox_SelectedItemChanged
         private void lBoxRecienCreados_SelectedValueChanged(object sender, EventArgs e)
@@ -281,15 +169,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxRecienCreados.SelectedItem;
-                    if (this.PasarABarnizadora(instrumentoAPasar))
-                    {
-                        IBarnizable instrumento = (IBarnizable)instrumentoAPasar;
-                        instrumento.Barnizar();
-                        this.lutheria.Barnizadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.InstrumentosEnProceso.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.PasarA<Barnizadora>(this.lutheria.Barnizadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -309,15 +191,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxRecienCreados.SelectedItem;
-                    if (this.PasarAEncordadora(instrumentoAPasar))
-                    {
-                        ICuerdas instrumento = (ICuerdas)instrumentoAPasar;
-                        instrumento.Encordar();
-                        this.lutheria.Encordadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.InstrumentosEnProceso.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.PasarA<Encordadora>(this.lutheria.Encordadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -337,15 +213,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxRecienCreados.SelectedItem;
-                    if (this.PasarAAfinadora(instrumentoAPasar))
-                    {
-                        IAfinable instrumento = (IAfinable)instrumentoAPasar;
-                        instrumento.Afinar();
-                        this.lutheria.Afinadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.InstrumentosEnProceso.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.PasarA<Afinadora>(this.lutheria.Afinadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -365,15 +235,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxRecienCreados.SelectedItem;
-                    if (this.PasarALimpiadora(instrumentoAPasar))
-                    {
-                        ILimpiable instrumento = (ILimpiable)instrumentoAPasar;
-                        instrumento.Limpiar();
-                        this.lutheria.Limpiadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.InstrumentosEnProceso.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.PasarA<Limpiadora>(this.lutheria.Limpiadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -393,13 +257,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxRecienCreados.SelectedItem;
-                    if (this.PasarAStock(instrumentoAPasar))
-                    {
-                        this.lutheria.Almacen.StockInstrumentos.Add(instrumentoAPasar);
-                        this.lutheria.InstrumentosEnProceso.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(null);
-                    }
+                    this.lutheria.PasarA<Almacen>(this.lutheria.Almacen, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -421,8 +281,7 @@ namespace TP3_HarryMartin_2C
                 if (this.lBoxBarnizadora.SelectedItem != null)
                 {
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxBarnizadora.SelectedItem;
-                    this.lutheria.InstrumentosEnProceso.Add(instrumentoAPasar);
-                    this.lutheria.Barnizadora.Instrumentos.Remove(instrumentoAPasar);
+                    this.lutheria.Barnizadora.PasarA<Lutheria>(this.lutheria, instrumentoAPasar);
                     this.ValueRefresh();
                     this.SelectedItemRefresh(instrumentoAPasar);                  
                 }
@@ -442,17 +301,10 @@ namespace TP3_HarryMartin_2C
             {
                 if (this.lBoxBarnizadora.SelectedItem != null)
                 {
-
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxBarnizadora.SelectedItem;
-                    if (this.PasarAEncordadora(instrumentoAPasar))
-                    {
-                        ICuerdas instrumento = (ICuerdas)instrumentoAPasar;
-                        instrumento.Encordar();
-                        this.lutheria.Encordadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Barnizadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Barnizadora.PasarA<Encordadora>(this.lutheria.Encordadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -470,17 +322,10 @@ namespace TP3_HarryMartin_2C
             {
                 if (this.lBoxBarnizadora.SelectedItem != null)
                 {
-
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxBarnizadora.SelectedItem;
-                    if (this.PasarAAfinadora(instrumentoAPasar))
-                    {
-                        IAfinable instrumento = (IAfinable)instrumentoAPasar;
-                        instrumento.Afinar();
-                        this.lutheria.Afinadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Barnizadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Barnizadora.PasarA<Afinadora>(this.lutheria.Afinadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -498,15 +343,10 @@ namespace TP3_HarryMartin_2C
             {
                 if (this.lBoxBarnizadora.SelectedItem != null)
                 {
-
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxBarnizadora.SelectedItem;
-                    if (this.PasarAStock(instrumentoAPasar))
-                    {
-                        this.lutheria.Almacen.StockInstrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Barnizadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(null);
-                    }
+                    this.lutheria.Barnizadora.PasarA<Almacen>(this.lutheria.Almacen, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -528,8 +368,7 @@ namespace TP3_HarryMartin_2C
                 if (this.lBoxEncordadora.SelectedItem != null)
                 {
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxEncordadora.SelectedItem;
-                    this.lutheria.InstrumentosEnProceso.Add(instrumentoAPasar);
-                    this.lutheria.Encordadora.Instrumentos.Remove(instrumentoAPasar);
+                    this.lutheria.Encordadora.PasarA<Lutheria>(this.lutheria, instrumentoAPasar);
                     this.ValueRefresh();
                     this.SelectedItemRefresh(instrumentoAPasar);
                 }
@@ -551,15 +390,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxEncordadora.SelectedItem;
-                    if (this.PasarABarnizadora(instrumentoAPasar))
-                    {
-                        IBarnizable instrumento = (IBarnizable)instrumentoAPasar;
-                        instrumento.Barnizar();
-                        this.lutheria.Barnizadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Encordadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Encordadora.PasarA<Barnizadora>(this.lutheria.Barnizadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -579,15 +412,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxEncordadora.SelectedItem;
-                    if (this.PasarAAfinadora(instrumentoAPasar))
-                    {
-                        IAfinable instrumento = (IAfinable)instrumentoAPasar;
-                        instrumento.Afinar();
-                        this.lutheria.Afinadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Encordadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Encordadora.PasarA<Afinadora>(this.lutheria.Afinadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -605,15 +432,10 @@ namespace TP3_HarryMartin_2C
             {
                 if (this.lBoxEncordadora.SelectedItem != null)
                 {
-
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxEncordadora.SelectedItem;
-                    if (this.PasarAStock(instrumentoAPasar))
-                    {
-                        this.lutheria.Almacen.StockInstrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Encordadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(null);
-                    }
+                    this.lutheria.Encordadora.PasarA<Almacen>(this.lutheria.Almacen, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -636,8 +458,7 @@ namespace TP3_HarryMartin_2C
                 if (this.lBoxLimpiadora.SelectedItem != null)
                 {
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxLimpiadora.SelectedItem;
-                    this.lutheria.InstrumentosEnProceso.Add(instrumentoAPasar);
-                    this.lutheria.Limpiadora.Instrumentos.Remove(instrumentoAPasar);
+                    this.lutheria.Limpiadora.PasarA<Lutheria>(this.lutheria, instrumentoAPasar);
                     this.ValueRefresh();
                     this.SelectedItemRefresh(instrumentoAPasar);
                 }
@@ -651,24 +472,16 @@ namespace TP3_HarryMartin_2C
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnLAAfinadora_Click(object sender, EventArgs e)
         {
             try
             {
                 if (this.lBoxLimpiadora.SelectedItem != null)
                 {
-
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxLimpiadora.SelectedItem;
-                    if (this.PasarAAfinadora(instrumentoAPasar))
-                    {
-                        IAfinable instrumento = (IAfinable)instrumentoAPasar;
-                        instrumento.Afinar();
-                        this.lutheria.Afinadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Limpiadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Limpiadora.PasarA<Afinadora>(this.lutheria.Afinadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -680,7 +493,6 @@ namespace TP3_HarryMartin_2C
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnLAStock_Click(object sender, EventArgs e)
         {
             try
@@ -689,13 +501,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxLimpiadora.SelectedItem;
-                    if (this.PasarAStock(instrumentoAPasar))
-                    {
-                        this.lutheria.Almacen.StockInstrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Limpiadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(null);
-                    }
+                    this.lutheria.Limpiadora.PasarA<Almacen>(this.lutheria.Almacen, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -717,8 +525,7 @@ namespace TP3_HarryMartin_2C
                 if (this.lBoxAfinadora.SelectedItem != null)
                 {
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxAfinadora.SelectedItem;
-                    this.lutheria.InstrumentosEnProceso.Add(instrumentoAPasar);
-                    this.lutheria.Afinadora.Instrumentos.Remove(instrumentoAPasar);
+                    this.lutheria.Afinadora.PasarA<Lutheria>(this.lutheria, instrumentoAPasar);
                     this.ValueRefresh();
                     this.SelectedItemRefresh(instrumentoAPasar);
                 }
@@ -740,15 +547,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxAfinadora.SelectedItem;
-                    if (this.PasarABarnizadora(instrumentoAPasar))
-                    {
-                        IBarnizable instrumento = (IBarnizable)instrumentoAPasar;
-                        instrumento.Barnizar();
-                        this.lutheria.Barnizadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Afinadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Afinadora.PasarA<Barnizadora>(this.lutheria.Barnizadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -768,15 +569,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxAfinadora.SelectedItem;
-                    if (this.PasarAEncordadora(instrumentoAPasar))
-                    {
-                        ICuerdas instrumento = (ICuerdas)instrumentoAPasar;
-                        instrumento.Encordar();
-                        this.lutheria.Encordadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Afinadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Afinadora.PasarA<Encordadora>(this.lutheria.Encordadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -796,15 +591,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxAfinadora.SelectedItem;
-                    if (this.PasarALimpiadora(instrumentoAPasar))
-                    {
-                        ILimpiable instrumento = (ILimpiable)instrumentoAPasar;
-                        instrumento.Limpiar();
-                        this.lutheria.Limpiadora.Instrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Afinadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(instrumentoAPasar);
-                    }
+                    this.lutheria.Afinadora.PasarA<Limpiadora>(this.lutheria.Limpiadora, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {
@@ -824,13 +613,9 @@ namespace TP3_HarryMartin_2C
                 {
 
                     Instrumento instrumentoAPasar = (Instrumento)this.lBoxAfinadora.SelectedItem;
-                    if (this.PasarAStock(instrumentoAPasar))
-                    {
-                        this.lutheria.Almacen.StockInstrumentos.Add(instrumentoAPasar);
-                        this.lutheria.Afinadora.Instrumentos.Remove(instrumentoAPasar);
-                        this.ValueRefresh();
-                        this.SelectedItemRefresh(null);
-                    }
+                    this.lutheria.Afinadora.PasarA<Almacen>(this.lutheria.Almacen, instrumentoAPasar);
+                    this.ValueRefresh();
+                    this.SelectedItemRefresh(instrumentoAPasar);
                 }
                 else
                 {

@@ -49,6 +49,7 @@
     <Compile Include="Fabrica\Encordadora.cs" />
     <Compile Include="Enumerados\eMaterial.cs" />
     <Compile Include="Enumerados\eTipoInstrumento.cs" />
+    <Compile Include="Interfaces\IListaDeInstrumentos.cs" />
     <Compile Include="Instrumentos\Flauta.cs" />
     <Compile Include="Instrumentos\Guitarra.cs" />
     <Compile Include="Interfaces\IAfinable.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Fabrica\Lutheria.cs" />
     <Compile Include="Excepciones\InvalidStockValueException.cs" />
     <Compile Include="Excepciones\NotEnoughMaterialsException.cs" />
+    <Compile Include="Interfaces\IProceso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Almacen\Stock.cs" />
     <Compile Include="Instrumentos\Violin.cs" />

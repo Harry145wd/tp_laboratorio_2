@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     [Serializable]
-    public class Almacen
+    public class Almacen : IListaDeInstrumentos, IProceso<Instrumento>
     {
         #region Atributes
         private List<Stock> stocksMateriasPrimas;
@@ -51,7 +51,7 @@ namespace Entidades
                 return ret;
             }
         }
-        public List<Instrumento> StockInstrumentos
+        public List<Instrumento> ListaDeInstrumentos
         {
             get { return stockInstrumentos; }
             set { stockInstrumentos = value; }
@@ -68,10 +68,11 @@ namespace Entidades
         }
         #endregion
 
+
         #region Constructors
         public Almacen()
         {
-            this.StockInstrumentos = new List<Instrumento>();
+            this.ListaDeInstrumentos = new List<Instrumento>();
             this.StocksMateriasPrimas = new List<Stock>();
             this.Costos = new List<Costo>();
             this.StocksMateriasPrimas.Add(new Stock(eMaterial.Madera));
@@ -110,11 +111,11 @@ namespace Entidades
         #region Methods
         public void ReStock<T>(T instrumento) where T : Instrumento
         {
-            this.StockInstrumentos.Add(instrumento);
+            this.ListaDeInstrumentos.Add(instrumento);
         }
         public void ReStock<T>(List<T> listaInstrumentos) where T : Instrumento
         {
-            this.StockInstrumentos = this.StockInstrumentos.Union(listaInstrumentos).ToList();
+            this.ListaDeInstrumentos = this.ListaDeInstrumentos.Union(listaInstrumentos).ToList();
         }
         public string MostrarMateriasPrimas()
         {
@@ -130,10 +131,10 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder("Lista de Instrumentos en stock:\n");
             sb.AppendLine("-----------------------------------------");
-            if(this.StockInstrumentos.Count != 0)
+            if(this.ListaDeInstrumentos.Count != 0)
             {
-                Instrumento.OrdenarInstrumentosPorTipo(this.stockInstrumentos);
-                foreach (Instrumento instrumento in this.StockInstrumentos)
+                Instrumento.OrdenarInstrumentosPorTipo(this.ListaDeInstrumentos);
+                foreach (Instrumento instrumento in this.ListaDeInstrumentos)
                 {
                     sb.AppendLine(instrumento.ToString());
                     sb.AppendLine("-----------------------------------------");
@@ -196,6 +197,38 @@ namespace Entidades
         public override string ToString()
         {
             return this.HacerInventario();
+        }
+
+        public bool ValidarPasaje(Instrumento instrumento)
+        {
+            bool ret = false;
+            if (instrumento is ITerminado)
+            {
+                ITerminado iterminado = (ITerminado)instrumento;
+                if (iterminado.Terminado)
+                {
+                    ret = true;
+                }
+                else
+                {
+                    throw new Exception("Este instrumento no puede pasarse al Almacen ya que no esta terminado");
+                }
+            }
+            return ret;
+        }
+
+        public void PasarA<T>(T receptora, Instrumento instrumento) where T : IListaDeInstrumentos, IProceso<Instrumento>
+        {
+            if (receptora.ValidarPasaje(instrumento))
+            {
+                receptora.Procesar(instrumento);
+                receptora.ListaDeInstrumentos.Add(instrumento);
+                this.ListaDeInstrumentos.Remove(instrumento);
+            }
+        }
+        public void Procesar(Instrumento item)
+        {
+             
         }
         #endregion
 

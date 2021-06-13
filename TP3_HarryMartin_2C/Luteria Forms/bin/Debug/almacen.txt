@@ -25,5 +25,14 @@ Esta Encordado: Si
 Esta Afinado: Si
 
 -----------------------------------------
+Violin.
+ID: a804488d-a961-41aa-b3ad-0250b90f24f9
+Luthier: Desconocido.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Barnizado: Si
+Esta Encordado: Si
+Esta Afinado: Si
+
+-----------------------------------------
 
 

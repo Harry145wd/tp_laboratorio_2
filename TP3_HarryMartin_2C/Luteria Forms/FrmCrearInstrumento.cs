@@ -49,7 +49,7 @@ namespace TP3_HarryMartin_2C
         {
             try
             {
-                this.lutheria.InstrumentosEnProceso.Add(this.lutheria.CrearInstrumento((eTipoInstrumento)this.cmbTipoInstrumento.SelectedItem, this.txtboxLuthier.Text, this.dtpFechaCreacion.Value));
+                this.lutheria.ListaDeInstrumentos.Add(this.lutheria.CrearInstrumento((eTipoInstrumento)this.cmbTipoInstrumento.SelectedItem, this.txtboxLuthier.Text, this.dtpFechaCreacion.Value));
             }
             catch (NotEnoughMaterialsException exc)
             {

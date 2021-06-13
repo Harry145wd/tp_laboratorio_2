@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     [Serializable]
-    public class Lutheria
+    public class Lutheria : IListaDeInstrumentos, IProceso<Instrumento>
     {
         #region Atributes
         private Almacen almacen;
@@ -45,9 +45,9 @@ namespace Entidades
             get { return encordadora; }
             set { encordadora = value; }
         }
-        public List<Instrumento> InstrumentosEnProceso
+        public List<Instrumento> ListaDeInstrumentos
         {
-            get
+            get 
             {
                 return this.instrumentosEnProceso;
             }
@@ -67,7 +67,7 @@ namespace Entidades
             this.Encordadora = new Encordadora();
             this.Afinadora = new Afinadora();
             this.Limpiadora = new Limpiadora();
-            this.InstrumentosEnProceso = new List<Instrumento>();
+            this.ListaDeInstrumentos = new List<Instrumento>();
             this.Almacen[eMaterial.Madera].ReStock(30);
             this.Almacen[eMaterial.Metal].ReStock(30);
             this.Almacen[eMaterial.Plastico].ReStock(30);
@@ -133,13 +133,32 @@ namespace Entidades
         public string MostrarInstrumentosEnProceso()
         {
             StringBuilder sb = new StringBuilder();
-            Instrumento.OrdenarInstrumentosPorTipo(this.InstrumentosEnProceso);
-            foreach (Instrumento instrumento in this.InstrumentosEnProceso)
+            Instrumento.OrdenarInstrumentosPorTipo(this.ListaDeInstrumentos);
+            foreach (Instrumento instrumento in this.ListaDeInstrumentos)
             {
                 sb.AppendLine(instrumento.ToString());
                 sb.AppendLine("-----------------------------------------");
             }
             return sb.ToString();
+        }
+
+        public bool ValidarPasaje(Instrumento instrumento)
+        {
+            return true;
+        }
+        public void PasarA<T>(T receptora, Instrumento instrumento) where T : IListaDeInstrumentos,IProceso<Instrumento>
+        {
+            if (receptora.ValidarPasaje(instrumento))
+            {
+                receptora.Procesar(instrumento);
+                receptora.ListaDeInstrumentos.Add(instrumento);
+                this.ListaDeInstrumentos.Remove(instrumento);
+            }
+        }
+
+        public void Procesar(Instrumento item)
+        {
+            
         }
         #endregion
 
