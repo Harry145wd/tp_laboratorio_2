@@ -60,14 +60,12 @@
     <Compile Include="Interfaces\ITerminado.cs" />
     <Compile Include="Fabrica\Limpiadora.cs" />
     <Compile Include="Fabrica\Lutheria.cs" />
-    <Compile Include="InvalidStockValueException.cs" />
-    <Compile Include="NotEnoughMaterialsException.cs" />
+    <Compile Include="Excepciones\InvalidStockValueException.cs" />
+    <Compile Include="Excepciones\NotEnoughMaterialsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Almacen\Stock.cs" />
     <Compile Include="Instrumentos\Violin.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Excepciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

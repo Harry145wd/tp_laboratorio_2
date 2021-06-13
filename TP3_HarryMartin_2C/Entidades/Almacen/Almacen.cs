@@ -130,12 +130,20 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder("Lista de Instrumentos en stock:\n");
             sb.AppendLine("-----------------------------------------");
-            Instrumento.OrdenarInstrumentosPorTipo(this.stockInstrumentos);
-            foreach (Instrumento instrumento in this.StockInstrumentos)
+            if(this.StockInstrumentos.Count != 0)
             {
-                sb.AppendLine(instrumento.ToString());
-                sb.AppendLine("-----------------------------------------");
+                Instrumento.OrdenarInstrumentosPorTipo(this.stockInstrumentos);
+                foreach (Instrumento instrumento in this.StockInstrumentos)
+                {
+                    sb.AppendLine(instrumento.ToString());
+                    sb.AppendLine("-----------------------------------------");
+                }
             }
+            else
+            {
+                sb.AppendLine("No hay instrumentos en Stock");
+            }
+            
             
             return sb.ToString();
         }

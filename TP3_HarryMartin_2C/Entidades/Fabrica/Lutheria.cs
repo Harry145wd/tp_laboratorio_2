@@ -68,7 +68,6 @@ namespace Entidades
             this.Afinadora = new Afinadora();
             this.Limpiadora = new Limpiadora();
             this.InstrumentosEnProceso = new List<Instrumento>();
-            //eliminar, solo para prueba
             this.Almacen[eMaterial.Madera].ReStock(30);
             this.Almacen[eMaterial.Metal].ReStock(30);
             this.Almacen[eMaterial.Plastico].ReStock(30);
@@ -76,7 +75,6 @@ namespace Entidades
         #endregion
 
         #region Methods
-        //PREGUNTAR A LAUTI
         public Instrumento CrearInstrumento(eTipoInstrumento tipoInstrumento, string luthier, DateTime dateTime)
         {
             Instrumento nuevoInstrumento = null;
