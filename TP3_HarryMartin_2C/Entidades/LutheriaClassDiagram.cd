@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Almacen" BaseTypeListCollapsed="true">
+    <Position X="9" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAAIAAEAiIFCAAIAAAhACAAAAAAACAABAAAAgA=</HashCode>
+      <FileName>Almacen\Almacen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Costo" Collapsed="true">
+    <Position X="9" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAEA=</HashCode>
+      <FileName>Almacen\Costo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Stock" Collapsed="true">
+    <Position X="9" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAAAEAAAAAAAAEAAAIAAACAAAAAAAAAAAAAABAAiA=</HashCode>
+      <FileName>Almacen\Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Archivos" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQIAAAAQAAAAAAAQAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archivos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.InvalidStockValueException" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Excepciones\InvalidStockValueException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.NotEnoughMaterialsException" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Excepciones\NotEnoughMaterialsException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Afinadora" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAgAAAQAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabrica\Afinadora.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Barnizadora" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAgAAAQAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabrica\Barnizadora.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Encordadora" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAgAAAQAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabrica\Encordadora.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Limpiadora" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAgAAAQAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabrica\Limpiadora.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Lutheria" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEABAgRABAAEAgAAAAEAAAAhAAAAASIACCAgAAwAAAA=</HashCode>
+      <FileName>Fabrica\Lutheria.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Entidades.Flauta">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Entidades.Instrumento" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="4.238" />
+        <Point X="2.125" Y="4.506" />
+        <Point X="5.812" Y="4.506" />
+        <Point X="5.812" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAhAAQIAw=</HashCode>
+      <FileName>Instrumentos\Flauta.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Entidades.Guitarra">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Entidades.Instrumento" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="4.238" />
+        <Point X="2.125" Y="4.506" />
+        <Point X="4" Y="4.506" />
+        <Point X="4" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAQAAAAAAAgAIAAIAAAAAAAAAAAEAAAAhAAQAAw=</HashCode>
+      <FileName>Instrumentos\Guitarra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Entidades.Instrumento">
+    <Position X="1" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAgAAMAAAAAAAACAAAAAAAIAABgAAAA0A=</HashCode>
+      <FileName>Instrumentos\Instrumento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Violin">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Entidades.Violin.eModelosViolin" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Instrumentos\Violin.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <InheritanceLine Type="Entidades.Instrumento" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="4.238" />
+        <Point X="2.125" Y="4.571" />
+        <Point X="2.125" Y="4.571" />
+        <Point X="2.125" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAQAAAAAAAgAIAAIAAAAAAAAAAAEAAAAhAAQAAw=</HashCode>
+      <FileName>Instrumentos\Violin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Entidades.IAfinable" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQAAA=</HashCode>
+      <FileName>Interfaces\IAfinable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.IBarnizable" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBarnizable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.ICuerdas" Collapsed="true">
+    <Position X="16.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Interfaces\ICuerdas.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.ILimpiable" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Interfaces\ILimpiable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.IListaDeInstrumentos" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IListaDeInstrumentos.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.IProceso&lt;T&gt;" Collapsed="true">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IProceso.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.ITerminado" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITerminado.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Entidades.IValueRefresh" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueRefresh.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Entidades.eMaterial">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAIAAAA=</HashCode>
+      <FileName>Enumerados\eMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Entidades.eTipoInstrumento">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAwAAAAA=</HashCode>
+      <FileName>Enumerados\eTipoInstrumento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

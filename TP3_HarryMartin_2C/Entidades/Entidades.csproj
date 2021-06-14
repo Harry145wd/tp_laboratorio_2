@@ -68,6 +68,8 @@
     <Compile Include="Almacen\Stock.cs" />
     <Compile Include="Instrumentos\Violin.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="LutheriaClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
