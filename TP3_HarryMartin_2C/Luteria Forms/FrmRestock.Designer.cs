@@ -73,6 +73,11 @@ namespace TP3_HarryMartin_2C
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 31);
             this.nudCantidad.TabIndex = 3;
+            this.nudCantidad.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // btnGenerarPedido
             // 

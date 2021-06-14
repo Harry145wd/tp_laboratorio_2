@@ -1,7 +1,7 @@
 Lista de materia prima:
-Cantidad de Madera: 9
-Cantidad de Metal: 9
-Cantidad de Plastico: 10
+Cantidad de Madera: 8
+Cantidad de Metal: 2
+Cantidad de Plastico: 18
 -----------------------------------------
 
 Lista de Instrumentos en stock:
