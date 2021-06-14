@@ -1,14 +1,33 @@
 Lista de materia prima:
-Cantidad de Madera: 0
-Cantidad de Metal: 8
-Cantidad de Plastico: 16
+Cantidad de Madera: 9
+Cantidad de Metal: 9
+Cantidad de Plastico: 10
 -----------------------------------------
 
 Lista de Instrumentos en stock:
 -----------------------------------------
+Flauta.
+ID: 43285b8f-d407-478c-9d46-2bf975700af4
+Luthier: Desconocido.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Limpia: Si
+Esta Afinada: Si
+
+
+-----------------------------------------
 Guitarra.
 ID: 8efee193-3eff-4631-820b-741c37957ced
 Luthier: Lucas.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Barnizado: Si
+Esta Encordado: Si
+Esta Afinado: Si
+
+
+-----------------------------------------
+Guitarra.
+ID: 96c1c16b-71d3-4d49-ae80-9740c2c854d6
+Luthier: Desconocido.
 Fecha de Fabricacion: 10/06/2021 18:30
 Esta Barnizado: Si
 Esta Encordado: Si
@@ -32,6 +51,24 @@ Fecha de Fabricacion: 10/06/2021 18:30
 Esta Barnizado: Si
 Esta Encordado: Si
 Esta Afinado: Si
+
+-----------------------------------------
+Violin.
+ID: dd316ff8-b9d1-40c0-ae94-5ba85c497560
+Luthier: Desconocido.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Barnizado: Si
+Esta Encordado: Si
+Esta Afinado: Si
+
+-----------------------------------------
+Flauta.
+ID: a61e6bca-3836-492a-9a87-f0bdd7eeca19
+Luthier: Desconocido.
+Fecha de Fabricacion: 10/06/2021 18:30
+Esta Limpia: Si
+Esta Afinada: Si
+
 
 -----------------------------------------
 

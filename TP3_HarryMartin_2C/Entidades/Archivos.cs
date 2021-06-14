@@ -14,6 +14,13 @@ namespace Entidades
     public static class Archivos
     {
         #region Binaries
+        /// <summary>
+        /// Guarda el objeto en el archivo binario especificados por parametro
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <param name="item"></param>
+        /// <returns>true si se pudo guardar</returns>
         public static bool GuardarBin<T>(string path, T item)
         {
             bool ret = false;
@@ -31,6 +38,12 @@ namespace Entidades
             }
             return ret;
         }
+        /// <summary>
+        /// Lee y devuelve el objeto del archivo binario especificado por parametro 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <returns>El objeto leido</returns>
         public static T LeerBin<T>(string path)
         {
             T item = default;
@@ -51,6 +64,12 @@ namespace Entidades
         #endregion
 
         #region Text
+        /// <summary>
+        /// Guarda el string en el archivo de texto especificados por parametro
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="data"></param>
+        /// <returns>true si se pudo guardar</returns>
         public static bool GuardarTxt(string path, string data)
         {
             bool ret = false;
@@ -67,6 +86,11 @@ namespace Entidades
             }
             return ret;
         }
+        /// <summary>
+        /// Lee y devuelve el string del archivo de texto especificado por parametro
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>El string leido</returns>
         public static string LeerTxt(string path)
         {
             string ret = null;
@@ -85,6 +109,13 @@ namespace Entidades
         #endregion
 
         #region XML
+        /// <summary>
+        /// Guarda el objeto en el archivo XML especificados por parametro
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <param name="item"></param>
+        /// <returns>true si se pudo guardar</returns>
         public static bool GuardarXML<T>(string path, T item)
         {
             bool ret = false;
@@ -105,6 +136,12 @@ namespace Entidades
             return ret;
 
         }
+        /// <summary>
+        /// Lee y devuelve el objeto del archivo XML especificado por parametro 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <returns>El objeto leido</returns>
         public static T LeerXML<T>(string path)
         {
             T item = default;

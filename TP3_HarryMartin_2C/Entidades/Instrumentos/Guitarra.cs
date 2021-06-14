@@ -41,6 +41,11 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Inicializa el nombre del Luthier y la fecha de creacion del instrumento con los datos pasados por parametro
+        /// </summary>
+        /// <param name="luthier"></param>
+        /// <param name="fecha"></param>
         public Guitarra(string luthier, DateTime fecha) : base(luthier, fecha)
         {
             this.TipoInstrumento = eTipoInstrumento.Guitarra;
@@ -48,18 +53,31 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Establece el estado EstaBarnizado en true
+        /// </summary>
         public void Barnizar()
         {
             this.EstaBarnizado = true;
         }
+        /// <summary>
+        /// Establece el estado EstaEncordado en true
+        /// </summary>
         public void Encordar()
         {
             this.EstaEncordado = true;
         }
+        /// <summary>
+        /// Establece el estado EstaAfinado en true
+        /// </summary>
         public void Afinar()
         {
             this.EstaAfinado = true;
         }
+        /// <summary>
+        /// Muestra los estados del instrumento
+        /// </summary>
+        /// <returns>Stirng con los estados del instrumento con valores de Si o No</returns>
         public string Estado()
         {
             StringBuilder sb = new StringBuilder();
@@ -68,6 +86,10 @@ namespace Entidades
             sb.AppendLine($"Esta Afinado: {Instrumento.BooleanToSiNo(this.EstaAfinado)}");
             return sb.ToString();
         }
+        /// <summary>
+        /// Muestra los datos y estados del Instrumento
+        /// </summary>
+        /// <returns>string con los datos y estados</returns>
         protected override string Datos()
         {
             StringBuilder sb = new StringBuilder(base.Datos());

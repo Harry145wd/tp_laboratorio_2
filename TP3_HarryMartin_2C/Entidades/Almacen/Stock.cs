@@ -30,10 +30,19 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Inicializa el Material del Stock con el valor por parametro
+        /// </summary>
+        /// <param name="material"></param>
         public Stock(eMaterial material)
         {
             this.Material = material;
         }
+        /// <summary>
+        /// Inicializa Material y Cantidad inicial del Stock con valores por parametro
+        /// </summary>
+        /// <param name="material"></param>
+        /// <param name="cantidad"></param>
         public Stock(eMaterial material, int cantidad) : this(material)
         {
             this.Cantidad = cantidad;
@@ -41,6 +50,11 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Permite Re-Stockear un objeto de tipo stock
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public bool ReStock(int cantidad)
         {
             bool ret = false;
@@ -55,6 +69,11 @@ namespace Entidades
             }
             return ret;
         }
+        /// <summary>
+        /// Permite De-Stockear un objeto de tipo stock
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public bool DeStock(int cantidad)
         {
             bool ret = false;
@@ -69,6 +88,10 @@ namespace Entidades
             }
             return ret;
         }
+        /// <summary>
+        /// Muestra la cantidad de un material
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Cantidad de {this.Material}: {this.Cantidad}";

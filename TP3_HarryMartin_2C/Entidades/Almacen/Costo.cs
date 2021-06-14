@@ -44,6 +44,12 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Inicializa el Costo, Material y Tipo de Instrumento con los datos por parametro
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <param name="material"></param>
+        /// <param name="costo"></param>
         public Costo(eTipoInstrumento tipo, eMaterial material, int costo)
         {
             this.TipoInstrumento = tipo;

@@ -70,6 +70,9 @@ namespace Entidades
 
 
         #region Constructors
+        /// <summary>
+        /// Constructor sin parametros, Inicializa Listas de Costos y Materiales en Stock con valores Standart
+        /// </summary>
         public Almacen()
         {
             this.ListaDeInstrumentos = new List<Instrumento>();
@@ -88,6 +91,12 @@ namespace Entidades
             this.Costos.Add(new Costo(eTipoInstrumento.Flauta, eMaterial.Metal, 5));
             this.Costos.Add(new Costo(eTipoInstrumento.Flauta, eMaterial.Plastico, 2));
         }
+        /// <summary>
+        /// Constructor sin parametros, Inicializa Listas de Costos y Materiales en Stock con valores por parametro
+        /// </summary>
+        /// <param name="madera"></param>
+        /// <param name="plastico"></param>
+        /// <param name="metal"></param>
         public Almacen(int madera, int plastico, int metal): this()
         {
             try
@@ -101,22 +110,33 @@ namespace Entidades
                 throw new InvalidOperationException("No se pudo stockear correctamente", e);
             }
         }
-        public Almacen(int madera, int plastico, int metal, List<Instrumento> instrumentos) : this(madera, plastico, metal)
-        {
-            this.ReStock(instrumentos);
-        }
 
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Añade un elemento de clase Instrumento o derivadas a la lista de instrumentos en el Almacen
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instrumento"></param>
         public void ReStock<T>(T instrumento) where T : Instrumento
         {
             this.ListaDeInstrumentos.Add(instrumento);
         }
+        /// <summary>
+        /// Añade una lista de Instrumentos o clases derivadas a la lista de instrumentos en el Almacen
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="listaInstrumentos"></param>
         public void ReStock<T>(List<T> listaInstrumentos) where T : Instrumento
         {
             this.ListaDeInstrumentos = this.ListaDeInstrumentos.Union(listaInstrumentos).ToList();
         }
+        
+        /// <summary>
+        /// devuelve un string con la lista de valores de materias primas en stock
+        /// </summary>
+        /// <returns>string con materias primas y sus valores actuales</returns>
         public string MostrarMateriasPrimas()
         {
             StringBuilder sb = new StringBuilder("Lista de materia prima:\n");
@@ -127,13 +147,16 @@ namespace Entidades
             sb.AppendLine("-----------------------------------------");
             return sb.ToString();
         }
+        /// <summary>
+        /// devuelve un string con la lista de los Instrumentos en stock
+        /// </summary>
+        /// <returns>string con Instrumentos en stock</returns>
         public string MostrarInstrumentosEnStock()
         {
             StringBuilder sb = new StringBuilder("Lista de Instrumentos en stock:\n");
             sb.AppendLine("-----------------------------------------");
             if(this.ListaDeInstrumentos.Count != 0)
             {
-                Instrumento.OrdenarInstrumentosPorTipo(this.ListaDeInstrumentos);
                 foreach (Instrumento instrumento in this.ListaDeInstrumentos)
                 {
                     sb.AppendLine(instrumento.ToString());
@@ -148,6 +171,10 @@ namespace Entidades
             
             return sb.ToString();
         }
+        /// <summary>
+        ///  devuelve un string con la lista de valores de materias primas y la lista de Instrumentos en stock
+        /// </summary>
+        /// <returns>string con materias primas y Instrumentos en stock</returns>
         public string HacerInventario()
         {
             StringBuilder sb = new StringBuilder();
@@ -155,12 +182,15 @@ namespace Entidades
             sb.AppendLine(this.MostrarInstrumentosEnStock());
             return sb.ToString();
         }
-
-        //revisar
+        /// <summary>
+        /// Verifica si hay cierta cantidad de un material necesario para construir un instrumento 
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <param name="material"></param>
+        /// <returns>True si hay suficiente del material especificado para construir el instrumento especificado</returns>
         public bool HaySuficienteMaterial(eTipoInstrumento tipo, eMaterial material)
         {
             bool ret = false;
-            //DEBERIA USAR UN CONTAINS?
             foreach(Costo costo in this.Costos)
             {
                 if(costo.TipoInstrumento == tipo && costo.Material == material)
@@ -178,6 +208,11 @@ namespace Entidades
             }
             return ret;  
         }
+        /// <summary>
+        /// Verifica si hay suficiente de todos los materiales necesarios para construir un Instrumento 
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <returns>True si hay suficientes materiales para construir el instrumento especificado</returns>
         public bool HaySuficientesMateriales(eTipoInstrumento tipo)
         {
             bool ret = true;
@@ -191,14 +226,20 @@ namespace Entidades
 
             }
             return ret;
-        }
-        //
-        
+        }     
+        /// <summary>
+        /// Muestra todo lo contenido en el Almacen (materias primas e Instrumentos)
+        /// </summary>
+        /// <returns>string con todos los contenidos del Almacen</returns>
         public override string ToString()
         {
             return this.HacerInventario();
         }
-
+        /// <summary>
+        /// Valida que el instrumento por parametro pueda agregarse a la lista del almacen
+        /// </summary>
+        /// <param name="instrumento"></param>
+        /// <returns>True si el instrumento especificado esta terminado</returns>
         public bool ValidarPasaje(Instrumento instrumento)
         {
             bool ret = false;
@@ -216,7 +257,12 @@ namespace Entidades
             }
             return ret;
         }
-
+        /// <summary>
+        /// Pasa el Instrumento especificado de la lista del almacen a la lista especificada por parametro
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="receptora"></param>
+        /// <param name="instrumento"></param>
         public void PasarA<T>(T receptora, Instrumento instrumento) where T : IListaDeInstrumentos, IProceso<Instrumento>
         {
             if (receptora.ValidarPasaje(instrumento))
@@ -226,6 +272,10 @@ namespace Entidades
                 this.ListaDeInstrumentos.Remove(instrumento);
             }
         }
+        /// <summary>
+        /// Funcion no implementada(No se puede usar excepcion ya que simplemnete debe no hacer nada)
+        /// </summary>
+        /// <param name="item"></param>
         public void Procesar(Instrumento item)
         {
              

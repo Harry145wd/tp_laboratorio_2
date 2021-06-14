@@ -22,11 +22,21 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Inicializa una lista de Instrumentos vacia
+        /// </summary>
         public Encordadora()
         {
             this.ListaDeInstrumentos = new List<Instrumento>();
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Valida que el instrumento por parametro pueda agregarse a la lista de la Encordadora
+        /// </summary>
+        /// <param name="instrumento"></param>
+        /// <returns></returns>
         public bool ValidarPasaje(Instrumento instrumento)
         {
             bool ret = false;
@@ -55,7 +65,12 @@ namespace Entidades
             }
             return ret;
         }
-
+        /// <summary>
+        /// Pasa el Instrumento especificado de la lista de la Encordadora a la lista especificada por parametro
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="receptora"></param>
+        /// <param name="instrumento"></param>
         public void PasarA<T>(T receptora, Instrumento instrumento) where T : IListaDeInstrumentos, IProceso<Instrumento>
         {
             if (receptora.ValidarPasaje(instrumento))
@@ -65,15 +80,15 @@ namespace Entidades
                 this.ListaDeInstrumentos.Remove(instrumento);
             }
         }
-
+        /// <summary>
+        /// Encuerda el Instrumento especificado por parametro
+        /// </summary>
+        /// <param name="item"></param>
         public void Procesar(Instrumento item)
         {
             ICuerdas instrumento = (ICuerdas)item;
             instrumento.Encordar();
         }
-        #endregion
-
-        #region Methods
         #endregion
 
         #region Operators

@@ -56,12 +56,20 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Inicializa la ID, fecha de creacion y nombre de luthier con valores predeterminados
+        /// </summary>
         protected Instrumento()
         {
             this.ID = Guid.NewGuid();
             this.FechaFabricacion = DateTime.Now;
             this.Luthier = "Desconocido";
         }
+        /// <summary>
+        /// Inicializa la fecha de creacion y nombre de luthier con valores por parametro
+        /// </summary>
+        /// <param name="luthier"></param>
+        /// <param name="fecha"></param>
         public Instrumento(string luthier, DateTime fecha) : this()
         {
             this.Luthier = luthier;
@@ -70,15 +78,11 @@ namespace Entidades
         #endregion
 
         #region Methods
-        public static int CompararPorNombre(Instrumento i1, Instrumento i2)
-        {
-            return string.Compare(i1.GetType().Name, i2.GetType().Name);
-        }
-        public static void OrdenarInstrumentosPorTipo(List<Instrumento> listaInstrumentos)
-        {
-            listaInstrumentos.Sort(Instrumento.CompararPorNombre);
-        }
-
+        
+        /// <summary>
+        /// Muestra los datos del Instrumento
+        /// </summary>
+        /// <returns>string con los datos del Instrumento</returns>
         protected virtual string Datos()
         {
             StringBuilder sb = new StringBuilder($"{this.TipoInstrumento}.\n");
@@ -87,11 +91,20 @@ namespace Entidades
             sb.AppendLine($"Fecha de Fabricacion: {this.FechaFabricacion.ToString("dd/MM/yyyy HH:mm")}");
             return sb.ToString();
         }
+        /// <summary>
+        /// Muestra los datos del Instrumento
+        /// </summary>
+        /// <returns>string con los datos del Instrumento</returns>
         public override string ToString()
         {
             return this.Datos();
         }
        
+        /// <summary>
+        /// Reemplaza True o False por valores Si o No
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns>String "Si" para True y "No" para False</returns>
         public static string BooleanToSiNo(bool state)
         {
             string ret = "No";
