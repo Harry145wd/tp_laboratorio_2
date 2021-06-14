@@ -124,8 +124,11 @@
   </Class>
   <Class Name="Entidades.Violin">
     <Position X="1" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
-      <Enum Name="Entidades.Violin.eModelosViolin" Collapsed="true">
+      <Enum Name="Entidades.Violin.eModelosViolin">
         <TypeIdentifier>
           <NewMemberFileName>Instrumentos\Violin.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -180,7 +183,7 @@
       <FileName>Interfaces\IListaDeInstrumentos.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Entidades.IProceso&lt;T&gt;" Collapsed="true">
+  <Interface Name="Entidades.IProceso&lt;T&gt;">
     <Position X="15" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
